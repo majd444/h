@@ -1,0 +1,34 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "dist",
+    "noEmit": false,
+    "jsx": "preserve"
+  },
+  "include": [
+    "app/api/**/*.ts",
+    "lib/**/*.ts",
+    "server.js",
+    "middleware.ts"
+  ],
+  "exclude": [
+    "app/chat/**/*",
+    "app/agent/**/*",
+    "app/workflow/**/*",
+    "app/landing/**/*",
+    "app/home/**/*",
+    "app/payment/**/*",
+    "app/settings/**/*",
+    "app/team/**/*",
+    "app/sandbox/**/*",
+    "app/sandbox-demo/**/*",
+    "app/demo/**/*",
+    "app/embed/**/*",
+    "app/auth/**/*",
+    "app/auth-sync/**/*",
+    "app/auth-redirect.tsx",
+    "app/page.tsx",
+    "app/layout.tsx",
+    "components/**/*"
+  ]
+}

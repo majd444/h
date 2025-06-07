@@ -1,0 +1,46 @@
+name: sevalla-backend
+type: web
+
+# Build configuration
+build:
+  builder: nixpacks
+  buildCommand: npm install --legacy-peer-deps && npm run build
+
+# Runtime configuration
+run:
+  command: node server.js
+  port: 3000
+
+# Environment configuration
+env:
+  - name: NODE_ENV
+    value: production
+  - name: NEXT_TELEMETRY_DISABLED
+    value: "1"
+  - name: DATABASE_PATH
+    value: /app/data/database.sqlite
+
+# Volume mounts for data persistence
+volumes:
+  - name: data
+    mountPath: /app/data
+    size: 1Gi
+
+# Health check configuration
+healthCheck:
+  path: /api/health
+  initialDelaySeconds: 10
+  periodSeconds: 30
+  timeoutSeconds: 5
+  successThreshold: 1
+  failureThreshold: 3
+
+# Resource allocation
+resources:
+  cpu: 1
+  memory: 1Gi
+  
+# Scaling configuration
+scaling:
+  minReplicas: 1
+  maxReplicas: 1

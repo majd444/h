@@ -1,0 +1,15 @@
+[build]
+  builder = "nixpacks"
+  buildCommand = "npm install --legacy-peer-deps && npm run build"
+
+[deploy]
+  startCommand = "node server.js"
+  healthcheckPath = "/api/health"
+  healthcheckTimeout = 60
+
+[install]
+  command = "npm install --legacy-peer-deps"
+
+[nixpacks]
+  install-cmd = "npm install --legacy-peer-deps"
+  no-install = false
