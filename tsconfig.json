@@ -1,9 +1,20 @@
 {
-  "extends": "./tsconfig.json",
   "compilerOptions": {
-    "outDir": "dist",
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
     "noEmit": false,
-    "jsx": "preserve"
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "outDir": "dist"
   },
   "include": [
     "app/api/**/*.ts",
@@ -28,7 +39,6 @@
     "app/auth-sync/**/*",
     "app/auth-redirect.tsx",
     "app/page.tsx",
-    "app/layout.tsx",
-    "components/**/*"
+    "app/layout.tsx"
   ]
 }
